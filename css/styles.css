@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.options .option {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+}
+
+.seleccionado{
+    background-color: #1e5187 !important;
+
+}
+
+.submit, .next, .results button {
+    display: block;
+    margin: 20px auto;
+}
+
+.feedback {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+nav button {
+    background-color: #6c757d;
+}
+
+.results {
+    text-align: left;
+    margin: 0 auto;
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+    .options .option, .results {
+        width: 90%;
+    }
+}

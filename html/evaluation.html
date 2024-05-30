@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Web Educativa</h1>
+    </header>
+    <main>
+        <h2>Pregunta <span id="question-number">1</span>/10</h2>
+        <p id="question-text">¿Qué significa HTML?</p>
+        <div class="options">
+            <button class="option" data-value="1">Lenguaje de marcado de hipertexto</button>
+            <button class="option" data-value="2">Lenguaje de máquina de texto alto</button>
+            <button class="option" data-value="3">Hipertexto y enlaces Lenguaje de marcado</button>
+            <button class="option" data-value="4">Ninguno de esos</button>
+        </div>
+
+        <button id="submit-answer" class="submit">Aceptar</button>
+        <p id="feedback" class="feedback"></p>
+        <button id="next-question" class="next" style="display: none;">Siguiente Pregunta</button>
+    </main>
+    <script src="../js/script.js"></script>
+</body>
+</html>
