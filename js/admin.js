@@ -220,6 +220,7 @@ async function verPracticasPerfectas() {
     const div = crearDiv();
     const tabla = document.createElement('table');
     tabla.classList.add('tableResultado');
+    tabla.style.border = '1px solid #ed6009';
 
     tabla.innerHTML = `
     <thead>
@@ -261,6 +262,7 @@ async function verTop10Tiempos() {
     const registros = await obtenerRegistros();
     const div = crearDiv();
     const tabla = document.createElement('table');
+    tabla.style.border = '1px solid #b148b0';
 
     tabla.classList.add('tableResultado');
     tabla.innerHTML = `
@@ -298,11 +300,51 @@ async function verTop10Tiempos() {
     results.appendChild(div);
 
 }
+async function verPuntaje() {
+    const registros = await obtenerRegistros();
+    const div = crearDiv();
+    const tabla = document.createElement('table');
+    tabla.style.border = '1px solid #a7684f';
+
+    tabla.classList.add('tableResultado');
+    tabla.innerHTML = `
+    <thead>
+        <th>Usuario</th>
+        <th>Respuestas</th>
+        <th>Tiempo</th>
+        <th>Puntaje</th>
+        <th>Fecha</th>
+    </thead>
+    `;
+
+    registros.forEach(dato => {
+        const { user, answers, time, puntaje, date } = dato;
+
+        if (puntaje < 7) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${user}</td>
+            <td>
+                <ul>
+                    ${answers.map(answer => `<li>${answer.answer}</li>`).join('')}
+                </ul>
+            </td>
+            <td>${time} Segundos</td>
+            <td>${puntaje} puntos</td>
+            <td>${date}</td>
+        `;
+            tabla.appendChild(row);
+        }
+    });
+
+    div.appendChild(tabla);
+    results.appendChild(div);
+}
 
 // Eventos
 estadisticasGenerales.addEventListener('click', verEstadisticasGenerales);
 consultasFecha.addEventListener('click', verConsultasFecha);
 practicasPerfectas.addEventListener('click', verPracticasPerfectas);
 top10Tiempos.addEventListener('click', verTop10Tiempos);
-puntaje.addEventListener('click', () => console.log('Puntaje'));
+puntaje.addEventListener('click', verPuntaje);
 fallas.addEventListener('click', () => console.log('fallas'));
