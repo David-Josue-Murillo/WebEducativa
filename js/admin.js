@@ -152,7 +152,7 @@ function iterarDatos(datos, value) {
                 `;
             }
         });
-        
+
     } else if (value === 3) {
         datos.forEach(dato => {
             const { user, answers, time, puntaje, date } = dato;
@@ -173,7 +173,7 @@ function iterarDatos(datos, value) {
             }
         });
 
-    } else if(value === 4) {
+    } else if (value === 4) {
         datos.forEach(dato => {
             const { user, answers, time, puntaje, date } = dato;
             if (Number(date.split('/')[2]) >= yearComp) {
@@ -193,7 +193,7 @@ function iterarDatos(datos, value) {
             }
         });
 
-    }else {
+    } else {
         datos.forEach(dato => {
             const { user, answers, time, puntaje, date } = dato;
 
@@ -257,10 +257,52 @@ async function verPracticasPerfectas() {
     results.appendChild(div);
 }
 
+async function verTop10Tiempos() {
+    const registros = await obtenerRegistros();
+    const div = crearDiv();
+    const tabla = document.createElement('table');
+
+    tabla.classList.add('tableResultado');
+    tabla.innerHTML = `
+    <thead>
+        <th>Usuario</th>
+        <th>Respuestas</th>
+        <th>Tiempo</th>
+        <th>Puntaje</th>
+        <th>Fecha</th>
+    </thead>
+    `;
+
+    registros.forEach(dato => {
+        const { user, answers, time, puntaje, date } = dato;
+        console.log(time);
+
+        if (time <= 10) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+            <td>${user}</td>
+            <td>
+                <ul>
+                    ${answers.map(answer => `<li>${answer.answer}</li>`).join('')}
+                </ul>
+            </td>
+            <td>${time} Segundos</td>
+            <td>${puntaje} puntos</td>
+            <td>${date}</td>
+        `;
+            tabla.appendChild(row);
+        }
+    });
+
+    div.appendChild(tabla);
+    results.appendChild(div);
+
+}
+
 // Eventos
 estadisticasGenerales.addEventListener('click', verEstadisticasGenerales);
 consultasFecha.addEventListener('click', verConsultasFecha);
 practicasPerfectas.addEventListener('click', verPracticasPerfectas);
-top10Tiempos.addEventListener('click', () => console.log('Top 10 tiempos'));
+top10Tiempos.addEventListener('click', verTop10Tiempos);
 puntaje.addEventListener('click', () => console.log('Puntaje'));
 fallas.addEventListener('click', () => console.log('fallas'));
