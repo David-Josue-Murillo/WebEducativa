@@ -341,10 +341,42 @@ async function verPuntaje() {
     results.appendChild(div);
 }
 
+async function verFallas() {
+    //Listado de todos los que han fallado una determinada pregunta
+    const registros = await obtenerRegistros();
+    const div = crearDiv();
+    const divQuestion = document.createElement('div');
+
+    divQuestion.classList.add('navFallas');
+    div.classList.add('divFallas');
+
+    div.innerHTML = `
+        <h2>Estudiantes con fallas por pregunta</h2>
+    `; 0
+
+    for (let i = 0; i < 10; i++) {
+        const { answers } = registros[0];
+        const { question } = answers[i];
+
+        divQuestion.innerHTML += `
+        <nav>
+            <h3>Pregunta ${i + 1}: ${question}</h3>
+        </nav>
+        
+        <ul>
+            ${registros.filter(dato => dato.answers[i].correct === false).map (dato => `<li>${dato.user}</li>`).join('')}
+        </ul>
+        `;
+        div.appendChild(divQuestion);
+    }
+
+    results.appendChild(div);
+}
+
 // Eventos
 estadisticasGenerales.addEventListener('click', verEstadisticasGenerales);
 consultasFecha.addEventListener('click', verConsultasFecha);
 practicasPerfectas.addEventListener('click', verPracticasPerfectas);
 top10Tiempos.addEventListener('click', verTop10Tiempos);
 puntaje.addEventListener('click', verPuntaje);
-fallas.addEventListener('click', () => console.log('fallas'));
+fallas.addEventListener('click', verFallas);

@@ -76,6 +76,29 @@ nav button {
     margin-bottom: 20px;
 }
 
+.divFallas{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #639cda;
+}
+
+.divFallas h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.navFallas{
+    width: 100%;
+    background-color: #b3ceec;
+}
+
+.navFallas nav{
+    background-color: #2878cf;
+    color: white;
+}
+
 @media (max-width: 600px) {
     .options .option, .results {
         width: 90%;
