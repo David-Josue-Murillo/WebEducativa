@@ -5,25 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .resultados{
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .tableResultado{
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        .tableResultado th, td{
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Nombre del Sitio</h1>
+        <h1>Web Educativa</h1>
     </header>
     <main>
         <h2>Panel de Administración</h2>
         <nav>
-            <button>Estadísticas Generales</button>
-            <button>Consulta por Fecha</button>
-            <button>Prácticas Perfectas</button>
-            <button>Top 10 Tiempos</button>
-            <button>Puntajes < 7</button>
-            <button>Fallas por Pregunta</button>
+            <button id="estadisticasGenerales">Estadísticas Generales</button>
+            <button id="consultasFecha">Consulta por Fecha</button>
+            <button id="practicasPerfectas">Prácticas Perfectas</button>
+            <button id="top10Tiempos">Top 10 Tiempos</button>
+            <button id="puntaje">Puntajes < 7</button>
+            <button id="fallas">Fallas por Pregunta</button>
         </nav>
         <section class="results">
             <!-- Resultados de la consulta seleccionada -->
         </section>
         <button>Exportar Resultados</button>
     </main>
+
+    <script type="module" src="../js/admin.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import { nuevoRegistro } from "./api.js";
+
 document.addEventListener('DOMContentLoaded', function () {
     const questions = [
         { text: "¿Qué significa HTML?", options: ["Lenguaje de marcado de hipertexto", "Lenguaje de máquina de texto alto", "Hipertexto y enlaces Lenguaje de marcado", "Ninguno de esos"], correct: 1 },
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { text: "¿Cual es un lenguaje de programación usado para ciencia de datos?", options: ["Python", "Kotlin", "C++", "JavaScript"], correct: 1}
     ];
 
-    const usuario = prompt("¿Cual es tu nombre?");
+    const usuario = prompt("¿Cuál es tu nombre?");
     let indicePreguntasActuales = 0;
     let puntaje = 0;
     let horaInicio = new Date();
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const enviarBotonRespuesta = document.getElementById('submit-answer');
     const botonSiguientePregunta = document.getElementById('next-question');
 
-    opcionesElementos.forEach( button => {
+    opcionesElementos.forEach(button => {
         button.addEventListener('click', () => {
             opcionesElementos.forEach(btn => btn.classList.remove('seleccionado'));
             button.classList.add('seleccionado');
@@ -67,13 +69,14 @@ document.addEventListener('DOMContentLoaded', function () {
             button.textContent = question.options[i];
             button.classList.remove('correct', 'incorrect');
         });
+
         comentarioElementos.textContent = '';
         enviarBotonRespuesta.style.display = 'inline-block';
         botonSiguientePregunta.style.display = 'none';
     }
 
     function manejarRespuestaEnviar() {
-        const opcionSeleccionada = document.querySelector('.option.selected');
+        const opcionSeleccionada = document.querySelector('.option.seleccionado');
         if (!opcionSeleccionada) {
             comentarioElementos.textContent = 'Por favor selecciona una opción.';
             return;
@@ -84,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (respuestaUsuario === respuestaCorrecta) {
             puntaje++;
-            comentarioElementos.textContent = 'Correcto!';
+            comentarioElementos.textContent = '¡Correcto!';
             opcionSeleccionada.classList.add('correct');
         } else {
-            comentarioElementos.textContent = 'Incorrecto!';
+            comentarioElementos.textContent = '¡Incorrecto!';
             opcionSeleccionada.classList.add('incorrect');
         }
 
@@ -97,12 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
         botonSiguientePregunta.style.display = 'inline-block';
     }
 
-    function siguientePreguntas() {
+    function siguientePreguntas(e) {
         indicePreguntasActuales++;
         if (indicePreguntasActuales < questions.length) {
             mostrarPreguntas(indicePreguntasActuales);
         } else {
-            mostrarResultados();
+            const resultData = mostrarResultados();
+            enviarDatos(resultData);
         }
     }
 
@@ -110,8 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         detenerTemporizador();
         const endTime = new Date();
         const tiempoUsado = Math.round((endTime - horaInicio) / 1000); // Tiempo en segundos
-        alert(`Evaluación completada. Puntaje: ${puntaje}/${questions.length}. Tiempo: ${tiempoUsado} segundos.`);
-        // Aquí puedes redirigir a la página de resultados o mostrar un resumen
+        alert(`Usuario: ${usuario}\nEvaluación completada. Puntaje: ${puntaje}/${questions.length}. Tiempo: ${tiempoUsado} segundos.`);
 
         // Guardar los resultados
         const resultData = {
@@ -119,10 +122,24 @@ document.addEventListener('DOMContentLoaded', function () {
             answers: usuarioRespuesta,
             puntaje: puntaje,
             time: tiempoUsado,
-            date: new Date().toLocaleString()
         };
-        localStorage.setItem('resultData', JSON.stringify(resultData));
+
+        return resultData;
     }
+
+    function enviarDatos(datos) {
+        const btnEnviar = document.createElement('button');
+        btnEnviar.textContent = 'Enviar Datos';
+        btnEnviar.style.display = 'block';
+        btnEnviar.style.margin = '10px auto';
+        btnEnviar.style.cursor = 'pointer';
+        document.body.appendChild(btnEnviar);
+
+        btnEnviar.addEventListener('click', () => {
+            nuevoRegistro(datos);
+        });
+    }
+
 
     opcionesElementos.forEach(button => {
         button.addEventListener('click', () => {
