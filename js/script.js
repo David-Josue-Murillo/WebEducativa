@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answers: usuarioRespuesta,
             puntaje: puntaje,
             time: tiempoUsado,
+            date: new Date().toLocaleDateString(),
         };
 
         return resultData;

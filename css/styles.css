@@ -70,6 +70,11 @@ nav button {
     width: 80%;
 }
 
+.divButtons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
 
 @media (max-width: 600px) {
     .options .option, .results {
