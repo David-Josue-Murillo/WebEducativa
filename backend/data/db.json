@@ -294,6 +294,124 @@
       "puntaje": 2,
       "time": 13,
       "date": "31/5/2020"
+    },
+    {
+      "id": "b8f7",
+      "user": "Jair",
+      "answers": [
+        {
+          "question": "¿Qué significa HTML?",
+          "answer": "Lenguaje de marcado de hipertexto",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es CSS?",
+          "answer": "Hojas de estilo en cascada",
+          "correct": true
+        },
+        {
+          "question": "¿Qué significa JS?",
+          "answer": "JavaScript",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un lenguaje de programación?",
+          "answer": "Un lenguaje que las computadoras entienden",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un algoritmo?",
+          "answer": "Un conjunto de instrucciones para resolver un problema",
+          "correct": true
+        },
+        {
+          "question": "¿Cual es un framework de JavaScript?",
+          "answer": "React",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un IDE?",
+          "answer": "Entorno de desarrollo integrado",
+          "correct": true
+        },
+        {
+          "question": "Cual es un sistema operativo?",
+          "answer": "Todas las anteriores",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un servidor?",
+          "answer": "Un ordenador que proporciona datos a otros ordenadores",
+          "correct": true
+        },
+        {
+          "question": "¿Cual es un lenguaje de programación usado para ciencia de datos?",
+          "answer": "Python",
+          "correct": true
+        }
+      ],
+      "puntaje": 10,
+      "time": 48,
+      "date": "31/5/2024"
+    },
+    {
+      "id": "65c2",
+      "user": "Rutilio",
+      "answers": [
+        {
+          "question": "¿Qué significa HTML?",
+          "answer": "Lenguaje de marcado de hipertexto",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es CSS?",
+          "answer": "Hojas de estilo en cascada",
+          "correct": true
+        },
+        {
+          "question": "¿Qué significa JS?",
+          "answer": "JavaScript",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un lenguaje de programación?",
+          "answer": "Un lenguaje que las computadoras entienden",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un algoritmo?",
+          "answer": "Un conjunto de instrucciones para resolver un problema",
+          "correct": true
+        },
+        {
+          "question": "¿Cual es un framework de JavaScript?",
+          "answer": "React",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un IDE?",
+          "answer": "Entorno de desarrollo integrado",
+          "correct": true
+        },
+        {
+          "question": "Cual es un sistema operativo?",
+          "answer": "Todas las anteriores",
+          "correct": true
+        },
+        {
+          "question": "¿Qué es un servidor?",
+          "answer": "Un ordenador que proporciona datos a otros ordenadores",
+          "correct": true
+        },
+        {
+          "question": "¿Cual es un lenguaje de programación usado para ciencia de datos?",
+          "answer": "Python",
+          "correct": true
+        }
+      ],
+      "puntaje": 10,
+      "time": 43,
+      "date": "31/5/2024"
     }
   ]
 }

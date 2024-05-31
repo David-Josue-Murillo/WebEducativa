@@ -197,9 +197,6 @@ function iterarDatos(datos, value) {
         datos.forEach(dato => {
             const { user, answers, time, puntaje, date } = dato;
 
-            //const dia = Number(date.split('/')[0]);
-            //const mes = Number(date.split('/')[1]);
-            //const year = Number(date.split('/')[2]);
             row.innerHTML += `
                 <td>${user}</td>
                 <td>
@@ -217,6 +214,53 @@ function iterarDatos(datos, value) {
     return row;
 }
 
+async function verPracticasPerfectas() {
+    const registros = await obtenerRegistros();
+
+    const div = crearDiv();
+    const tabla = document.createElement('table');
+    tabla.classList.add('tableResultado');
+
+    tabla.innerHTML = `
+    <thead>
+        <th>Usuario</th>
+        <th>Respuestas</th>
+        <th>Tiempo</th>
+        <th>Puntaje</th>
+        <th>Fecha</th>
+    </thead>
+        `;
+
+    registros.forEach(dato => {
+        const { user, answers, time, puntaje, date } = dato;
+
+        const perfectas = answers.filter(answer => answer.correct === true).length === answers.length;
+
+        if (perfectas) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user}</td>
+                <td>
+                    <ul>
+                        ${answers.map(answer => `<li>${answer.answer}</li>`).join('')}
+                    </ul>
+                </td>
+                <td>${time} Segundos</td>
+                <td>${puntaje} puntos</td>
+                <td>${date}</td>
+            `;
+            tabla.appendChild(row);
+        }
+    });
+
+    div.appendChild(tabla);
+    results.appendChild(div);
+}
+
 // Eventos
 estadisticasGenerales.addEventListener('click', verEstadisticasGenerales);
 consultasFecha.addEventListener('click', verConsultasFecha);
+practicasPerfectas.addEventListener('click', verPracticasPerfectas);
+top10Tiempos.addEventListener('click', () => console.log('Top 10 tiempos'));
+puntaje.addEventListener('click', () => console.log('Puntaje'));
+fallas.addEventListener('click', () => console.log('fallas'));
