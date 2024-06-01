@@ -82,10 +82,14 @@ function mostrarRespuestasPorFecha(datos, value) {
 
 function iterarDatos(datos, value) {
     const row = document.createElement('tbody');
-    const diaComp = (new Date().getDate()) - 1;
-    const semanaComp = (new Date().getDate()) - 7;
-    const mesComp = (new Date().getMonth());
-    const yearComp = (new Date().getFullYear()) - 1;
+
+    let diaComp = (new Date().getDate() - 1);
+    let semanaComp = (new Date().getDate()) - 7;
+    let mesComp = (new Date().getMonth());
+    let yearComp = (new Date().getFullYear()) - 1;
+
+    diaComp < 1 ? diaComp = 30 : diaComp;
+    semanaComp < 1 ? semanaComp = diaComp - 6 : semanaComp;
 
     datos.forEach(dato => {
         const { user, answers, time, puntaje, date } = dato;
@@ -94,10 +98,10 @@ function iterarDatos(datos, value) {
         const mes = Number(fecha[1]);
         const año = Number(fecha[2]);
 
-        if ((value === 1 && dia >= diaComp && año === new Date().getFullYear()) ||
-            (value === 2 && dia >= semanaComp && año === new Date().getFullYear()) ||
-            (value === 3 && mes >= mesComp && año === new Date().getFullYear()) ||
-            (value === 4 && año >= yearComp) ||
+        if (((value === 1 && dia) >= diaComp && año === new Date().getFullYear() && mes === new Date().getMonth()) ||
+            ((value === 2 && dia) >= semanaComp && año === new Date().getFullYear() && mes === new Date().getMonth()) ||
+            ((value === 3 && mes) >= mesComp && año === new Date().getFullYear()) ||
+            ((value === 4 && año) >= yearComp) ||
             (!value)) {
             const rowElement = document.createElement('tr');
             rowElement.innerHTML = `
