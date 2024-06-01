@@ -92,6 +92,7 @@ nav button {
 .navFallas{
     width: 100%;
     background-color: #b3ceec;
+    border: 1px solid #1d4f8b;
 }
 
 .navFallas nav{
