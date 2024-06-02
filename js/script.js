@@ -160,4 +160,10 @@ document.addEventListener('DOMContentLoaded', function () {
             nuevoRegistro(datos);
         });
     }
+
+    function crearForm(){
+        const form = document.createElement('form');
+        form.id = 'formEnviar';
+        form.action = 'index.html';
+    }
 });

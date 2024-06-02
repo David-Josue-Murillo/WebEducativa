@@ -28,7 +28,7 @@ foreach($registros as $registro){
     $time = $registro['time'];
     $date = $registro['date'];
 
-    $file = fopen("{$name}.txt", "w");
+    $file = fopen("../data/{$name}.txt", "w");
     fwrite($file, "Nombre del usuario: {$name}\n\n");
     foreach($answers as $answer){
         fwrite($file, "Pregunta: {$answer['question']}\n");
