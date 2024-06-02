@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
             opcionesElementos: document.querySelectorAll('.option'),
             comentarioElementos: document.getElementById('feedback'),
             enviarBotonRespuesta: document.getElementById('submit-answer'),
-            botonSiguientePregunta: document.getElementById('next-question')
+            botonSiguientePregunta: document.getElementById('next-question'),
+            guardarDatos: document.getElementById('guardarDatos')
         };
     }
 
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
             mostrarPreguntas(indicePreguntasActuales);
         } else {
             const resultData = mostrarResultados();
-            enviarDatos(resultData);
+            enviarDatos(resultData, elementosDOM.guardarDatos);
         }
     }
 
@@ -148,22 +149,18 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     }
 
-    function enviarDatos(datos) {
+    function enviarDatos(datos, elemento) {
         const btnEnviar = document.createElement('button');
         btnEnviar.textContent = 'Guardar Datos';
         btnEnviar.style.display = 'block';
         btnEnviar.style.margin = '10px auto';
         btnEnviar.style.cursor = 'pointer';
-        document.body.appendChild(btnEnviar);
+        
+        elemento.appendChild(btnEnviar);
 
         btnEnviar.addEventListener('click', () => {
             nuevoRegistro(datos);
+            window.location.href = '../php/guardarRegistros.php'
         });
-    }
-
-    function crearForm(){
-        const form = document.createElement('form');
-        form.id = 'formEnviar';
-        form.action = 'index.html';
     }
 });

@@ -1,0 +1,35 @@
+Nombre del usuario: manolo
+
+Pregunta: ¿Qué significa HTML?
+Respuesta: Hipertexto y enlaces Lenguaje de marcado
+
+Pregunta: ¿Qué es CSS?
+Respuesta: Hojas de estilo creativo
+
+Pregunta: ¿Qué significa JS?
+Respuesta: JavaScript
+
+Pregunta: ¿Qué es un lenguaje de programación?
+Respuesta: Un lenguaje que los robots entienden
+
+Pregunta: ¿Qué es un algoritmo?
+Respuesta: Un conjunto de instrucciones para hacer ejercicio
+
+Pregunta: ¿Cual es un framework de JavaScript?
+Respuesta: Laravel
+
+Pregunta: ¿Qué es un IDE?
+Respuesta: Entorno de desarrollo integrado
+
+Pregunta: Cual es un sistema operativo?
+Respuesta: MacOS
+
+Pregunta: ¿Qué es un servidor?
+Respuesta: Un ordenador que juega videojuegos
+
+Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
+Respuesta: C++
+
+Puntos Obtenidos: 2
+Fecha: 1/6/2024
+Tiempo: 11 segundos

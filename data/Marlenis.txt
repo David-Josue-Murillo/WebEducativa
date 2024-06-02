@@ -1,0 +1,35 @@
+Nombre del usuario: Marlenis
+
+Pregunta: ¿Qué significa HTML?
+Respuesta: Ninguno de esos
+
+Pregunta: ¿Qué es CSS?
+Respuesta: Hojas de estilo coloridas
+
+Pregunta: ¿Qué significa JS?
+Respuesta: JScript
+
+Pregunta: ¿Qué es un lenguaje de programación?
+Respuesta: Un lenguaje que las computadoras entienden
+
+Pregunta: ¿Qué es un algoritmo?
+Respuesta: Un conjunto de instrucciones para hacer una pizza
+
+Pregunta: ¿Cual es un framework de JavaScript?
+Respuesta: Todas las anteriores
+
+Pregunta: ¿Qué es un IDE?
+Respuesta: Entorno de desarrollo interesante
+
+Pregunta: Cual es un sistema operativo?
+Respuesta: Todas las anteriores
+
+Pregunta: ¿Qué es un servidor?
+Respuesta: Un ordenador que proporciona datos a otros ordenadores
+
+Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
+Respuesta: JavaScript
+
+Puntos Obtenidos: 3
+Fecha: 1/6/2024
+Tiempo: 12 segundos
