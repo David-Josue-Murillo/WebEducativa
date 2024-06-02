@@ -1,0 +1,35 @@
+Nombre del usuario: Jair
+
+Pregunta: ¿Qué significa HTML?
+Respuesta: Lenguaje de marcado de hipertexto
+
+Pregunta: ¿Qué es CSS?
+Respuesta: Hojas de estilo en cascada
+
+Pregunta: ¿Qué significa JS?
+Respuesta: JavaScript
+
+Pregunta: ¿Qué es un lenguaje de programación?
+Respuesta: Un lenguaje que las computadoras entienden
+
+Pregunta: ¿Qué es un algoritmo?
+Respuesta: Un conjunto de instrucciones para resolver un problema
+
+Pregunta: ¿Cual es un framework de JavaScript?
+Respuesta: React
+
+Pregunta: ¿Qué es un IDE?
+Respuesta: Entorno de desarrollo integrado
+
+Pregunta: Cual es un sistema operativo?
+Respuesta: Todas las anteriores
+
+Pregunta: ¿Qué es un servidor?
+Respuesta: Un ordenador que proporciona datos a otros ordenadores
+
+Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
+Respuesta: Python
+
+Puntos Obtenidos: 10
+Fecha: 31/5/2022
+Tiempo: 48 segundos

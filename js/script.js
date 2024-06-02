@@ -1,19 +1,8 @@
 import { nuevoRegistro } from "./api.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-    const questions = [
-        { text: "¿Qué significa HTML?", options: ["Lenguaje de marcado de hipertexto", "Lenguaje de máquina de texto alto", "Hipertexto y enlaces Lenguaje de marcado", "Ninguno de esos"], correct: 1 },
-        { text: "¿Qué es CSS?", options: ["Hojas de estilo en cascada", "Hojas de estilo de computadora", "Hojas de estilo creativo", "Hojas de estilo coloridas"], correct: 1 },
-        { text: "¿Qué significa JS?", options: ["JustScript", "JavaSuper", "JavaScript", "JScript"], correct: 3 },
-        { text: "¿Qué es un lenguaje de programación?", options: ["Un lenguaje que los humanos entienden", "Un lenguaje que los animales entienden", "Un lenguaje que los robots entienden", "Un lenguaje que las computadoras entienden"], correct: 4 },
-        { text: "¿Qué es un algoritmo?", options: ["Un conjunto de instrucciones para hacer café", "Un conjunto de instrucciones para resolver un problema", "Un conjunto de instrucciones para hacer ejercicio", "Un conjunto de instrucciones para hacer una pizza"], correct: 2 },
-        { text: "¿Cual es un framework de JavaScript?", options: ["React", "Spring", "Laravel", "Todas las anteriores"], correct: 1 },
-        { text: "¿Qué es un IDE?", options: ["Entorno de desarrollo interactivo", "Entorno de desarrollo inteligente", "Entorno de desarrollo integrado", "Entorno de desarrollo interesante"], correct: 3 },
-        { text: "Cual es un sistema operativo?", options: ["Windows", "Linux", "MacOS", "Todas las anteriores"], correct: 4 },
-        { text: "¿Qué es un servidor?", options: ["Un ordenador que recibe datos de otros ordenadores", "Un ordenador que no hace nada", "Un ordenador que juega videojuegos", "Un ordenador que proporciona datos a otros ordenadores"], correct: 4 },
-        { text: "¿Cual es un lenguaje de programación usado para ciencia de datos?", options: ["Python", "Kotlin", "C++", "JavaScript"], correct: 1}
-    ];
-
+    // Variables de configuración
+    const questions = obtenerPreguntas();
     const usuario = prompt("¿Cuál es tu nombre?");
     let indicePreguntasActuales = 0;
     let puntaje = 0;
@@ -21,23 +10,59 @@ document.addEventListener('DOMContentLoaded', function () {
     let temporizador;
     let usuarioRespuesta = [];
 
-    const preguntaNumeroElemento = document.getElementById('question-number');
-    const preguntaTextoElemento = document.getElementById('question-text');
-    const opcionesElementos = document.querySelectorAll('.option');
-    const comentarioElementos = document.getElementById('feedback');
-    const enviarBotonRespuesta = document.getElementById('submit-answer');
-    const botonSiguientePregunta = document.getElementById('next-question');
+    // Elementos del DOM
+    const elementosDOM = obtenerElementosDOM();
 
-    opcionesElementos.forEach(button => {
-        button.addEventListener('click', () => {
-            opcionesElementos.forEach(btn => btn.classList.remove('seleccionado'));
-            button.classList.add('seleccionado');
+    // Inicialización de eventos
+    inicializarEventos(elementosDOM);
+
+    // Funciones principales
+    function obtenerPreguntas() {
+        return [
+            { text: "¿Qué significa HTML?", options: ["Lenguaje de marcado de hipertexto", "Lenguaje de máquina de texto alto", "Hipertexto y enlaces Lenguaje de marcado", "Ninguno de esos"], correct: 1 },
+            { text: "¿Qué es CSS?", options: ["Hojas de estilo en cascada", "Hojas de estilo de computadora", "Hojas de estilo creativo", "Hojas de estilo coloridas"], correct: 1 },
+            { text: "¿Qué significa JS?", options: ["JustScript", "JavaSuper", "JavaScript", "JScript"], correct: 3 },
+            { text: "¿Qué es un lenguaje de programación?", options: ["Un lenguaje que los humanos entienden", "Un lenguaje que los animales entienden", "Un lenguaje que los robots entienden", "Un lenguaje que las computadoras entienden"], correct: 4 },
+            { text: "¿Qué es un algoritmo?", options: ["Un conjunto de instrucciones para hacer café", "Un conjunto de instrucciones para resolver un problema", "Un conjunto de instrucciones para hacer ejercicio", "Un conjunto de instrucciones para hacer una pizza"], correct: 2 },
+            { text: "¿Cual es un framework de JavaScript?", options: ["React", "Spring", "Laravel", "Todas las anteriores"], correct: 1 },
+            { text: "¿Qué es un IDE?", options: ["Entorno de desarrollo interactivo", "Entorno de desarrollo inteligente", "Entorno de desarrollo integrado", "Entorno de desarrollo interesante"], correct: 3 },
+            { text: "Cual es un sistema operativo?", options: ["Windows", "Linux", "MacOS", "Todas las anteriores"], correct: 4 },
+            { text: "¿Qué es un servidor?", options: ["Un ordenador que recibe datos de otros ordenadores", "Un ordenador que no hace nada", "Un ordenador que juega videojuegos", "Un ordenador que proporciona datos a otros ordenadores"], correct: 4 },
+            { text: "¿Cual es un lenguaje de programación usado para ciencia de datos?", options: ["Python", "Kotlin", "C++", "JavaScript"], correct: 1}
+        ];
+    }
+
+    function obtenerElementosDOM() {
+        return {
+            preguntaNumeroElemento: document.getElementById('question-number'),
+            preguntaTextoElemento: document.getElementById('question-text'),
+            opcionesElementos: document.querySelectorAll('.option'),
+            comentarioElementos: document.getElementById('feedback'),
+            enviarBotonRespuesta: document.getElementById('submit-answer'),
+            botonSiguientePregunta: document.getElementById('next-question')
+        };
+    }
+
+    function inicializarEventos(elementos) {
+        elementos.opcionesElementos.forEach(button => {
+            button.addEventListener('click', () => {
+                seleccionarOpcion(button, elementos.opcionesElementos);
+            });
         });
-    });
+        elementos.enviarBotonRespuesta.addEventListener('click', manejarRespuestaEnviar);
+        elementos.botonSiguientePregunta.addEventListener('click', siguientePreguntas);
+        iniciarTemporizador();
+        mostrarPreguntas(indicePreguntasActuales);
+    }
 
-    function horaInicior() {
+    function seleccionarOpcion(button, opcionesElementos) {
+        opcionesElementos.forEach(btn => btn.classList.remove('seleccionado'));
+        button.classList.add('seleccionado');
+    }
+
+    function iniciarTemporizador() {
         const elementoTemporizador = document.createElement('div');
-        elementoTemporizador.id = 'timer';  
+        elementoTemporizador.id = 'timer';
         document.body.prepend(elementoTemporizador);
 
         temporizador = setInterval(() => {
@@ -47,24 +72,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 
-    function limpiarIntervalo(intervalo) {
-        clearInterval(intervalo);
+    function detenerTemporizador() {
+        clearInterval(temporizador);
         const elementoTemporizador = document.getElementById('timer');
         if (elementoTemporizador) {
             elementoTemporizador.remove();
         }
     }
 
-    function detenerTemporizador() {
-        limpiarIntervalo(temporizador);
-    }
-
     function mostrarPreguntas(index) {
         const question = questions[index];
+        const { preguntaNumeroElemento, preguntaTextoElemento, opcionesElementos, comentarioElementos, enviarBotonRespuesta, botonSiguientePregunta } = elementosDOM;
 
         preguntaNumeroElemento.textContent = index + 1;
         preguntaTextoElemento.textContent = question.text;
-        
+
         opcionesElementos.forEach((button, i) => {
             button.textContent = question.options[i];
             button.classList.remove('correct', 'incorrect');
@@ -78,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function manejarRespuestaEnviar() {
         const opcionSeleccionada = document.querySelector('.option.seleccionado');
         if (!opcionSeleccionada) {
-            comentarioElementos.textContent = 'Por favor selecciona una opción.';
+            elementosDOM.comentarioElementos.textContent = 'Por favor selecciona una opción.';
             return;
         }
 
@@ -87,20 +109,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (respuestaUsuario === respuestaCorrecta) {
             puntaje++;
-            comentarioElementos.textContent = '¡Correcto!';
+            elementosDOM.comentarioElementos.textContent = '¡Correcto!';
             opcionSeleccionada.classList.add('correct');
         } else {
-            comentarioElementos.textContent = '¡Incorrecto!';
+            elementosDOM.comentarioElementos.textContent = '¡Incorrecto!';
             opcionSeleccionada.classList.add('incorrect');
         }
 
         usuarioRespuesta.push({ question: questions[indicePreguntasActuales].text, answer: opcionSeleccionada.textContent, correct: respuestaUsuario === respuestaCorrecta });
 
-        enviarBotonRespuesta.style.display = 'none';
-        botonSiguientePregunta.style.display = 'inline-block';
+        elementosDOM.enviarBotonRespuesta.style.display = 'none';
+        elementosDOM.botonSiguientePregunta.style.display = 'inline-block';
     }
 
-    function siguientePreguntas(e) {
+    function siguientePreguntas() {
         indicePreguntasActuales++;
         if (indicePreguntasActuales < questions.length) {
             mostrarPreguntas(indicePreguntasActuales);
@@ -117,20 +139,18 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(`Usuario: ${usuario}\nEvaluación completada. Puntaje: ${puntaje}/${questions.length}. Tiempo: ${tiempoUsado} segundos.`);
 
         // Guardar los resultados
-        const resultData = {
-            user: usuario, 
+        return {
+            user: usuario,
             answers: usuarioRespuesta,
             puntaje: puntaje,
             time: tiempoUsado,
-            date: new Date().toLocaleDateString(),
+            date: new Date().toLocaleDateString()
         };
-
-        return resultData;
     }
 
     function enviarDatos(datos) {
         const btnEnviar = document.createElement('button');
-        btnEnviar.textContent = 'Enviar Datos';
+        btnEnviar.textContent = 'Guardar Datos';
         btnEnviar.style.display = 'block';
         btnEnviar.style.margin = '10px auto';
         btnEnviar.style.cursor = 'pointer';
@@ -140,18 +160,4 @@ document.addEventListener('DOMContentLoaded', function () {
             nuevoRegistro(datos);
         });
     }
-
-
-    opcionesElementos.forEach(button => {
-        button.addEventListener('click', () => {
-            opcionesElementos.forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-        });
-    });
-
-    enviarBotonRespuesta.addEventListener('click', manejarRespuestaEnviar);
-    botonSiguientePregunta.addEventListener('click', siguientePreguntas);
-
-    horaInicior();
-    mostrarPreguntas(indicePreguntasActuales);
 });

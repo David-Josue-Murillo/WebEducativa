@@ -1,0 +1,35 @@
+Nombre del usuario: Josue
+
+Pregunta: ¿Qué significa HTML?
+Respuesta: Lenguaje de máquina de texto alto
+
+Pregunta: ¿Qué es CSS?
+Respuesta: Hojas de estilo de computadora
+
+Pregunta: ¿Qué significa JS?
+Respuesta: JavaSuper
+
+Pregunta: ¿Qué es un lenguaje de programación?
+Respuesta: Un lenguaje que los animales entienden
+
+Pregunta: ¿Qué es un algoritmo?
+Respuesta: Un conjunto de instrucciones para resolver un problema
+
+Pregunta: ¿Cual es un framework de JavaScript?
+Respuesta: Spring
+
+Pregunta: ¿Qué es un IDE?
+Respuesta: Entorno de desarrollo inteligente
+
+Pregunta: Cual es un sistema operativo?
+Respuesta: Linux
+
+Pregunta: ¿Qué es un servidor?
+Respuesta: Un ordenador que no hace nada
+
+Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
+Respuesta: Kotlin
+
+Puntos Obtenidos: 1
+Fecha: 30/5/2024
+Tiempo: 11 segundos

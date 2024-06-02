@@ -1,0 +1,35 @@
+Nombre del usuario: David
+
+Pregunta: ¿Qué significa HTML?
+Respuesta: Lenguaje de marcado de hipertexto
+
+Pregunta: ¿Qué es CSS?
+Respuesta: Hojas de estilo creativo
+
+Pregunta: ¿Qué significa JS?
+Respuesta: JavaScript
+
+Pregunta: ¿Qué es un lenguaje de programación?
+Respuesta: Un lenguaje que las computadoras entienden
+
+Pregunta: ¿Qué es un algoritmo?
+Respuesta: Un conjunto de instrucciones para hacer ejercicio
+
+Pregunta: ¿Cual es un framework de JavaScript?
+Respuesta: React
+
+Pregunta: ¿Qué es un IDE?
+Respuesta: Entorno de desarrollo interesante
+
+Pregunta: Cual es un sistema operativo?
+Respuesta: Todas las anteriores
+
+Pregunta: ¿Qué es un servidor?
+Respuesta: Un ordenador que proporciona datos a otros ordenadores
+
+Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
+Respuesta: JavaScript
+
+Puntos Obtenidos: 6
+Fecha: 31/5/2024
+Tiempo: 27 segundos
