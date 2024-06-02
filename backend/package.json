@@ -2,7 +2,7 @@
   "name": "web_educativa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.php",
   "scripts": {
     "start-json": "json-server --watch db.json",
     "start": "concurrently \"npm run start-json\"",
