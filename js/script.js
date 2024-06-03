@@ -158,9 +158,10 @@ document.addEventListener('DOMContentLoaded', function () {
         
         elemento.appendChild(btnEnviar);
 
-        btnEnviar.addEventListener('click', () => {
+        btnEnviar.addEventListener('click', (e) => {
+            e.preventDefault();
+            
             nuevoRegistro(datos);
-            window.location.href = '../php/guardarRegistros.php'
         });
     }
 });

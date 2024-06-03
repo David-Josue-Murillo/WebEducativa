@@ -80,7 +80,7 @@ if($registros !== null){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estadísticas</title>
+    <title>Página de Inicio</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -88,11 +88,9 @@ if($registros !== null){
         <h1>Web Educativa</h1>
     </header>
     <main>
-        <h2>Evaluación Completada</h2>
-        <p>Puntaje: 8/10</p>
-        <p>Tiempo Invertido: 15 minutos</p>
-        <button onclick="location.href='review.html'">Revisar Práctica</button>
-        <button onclick="location.href='index.html'">Volver al Inicio</button>
+        <p>Bienvenido a la plataforma de autoevaluación sobre desarrollo web.</p>
+        <button onclick="location.href='evaluacion.html'">Comenzar Evaluación</button>
+        <button onclick="location.href='admin.html'">Panel de Administración</button>
     </main>
 </body>
 </html>

@@ -7,13 +7,13 @@ Pregunta: ¿Qué es CSS?
 Respuesta: Hojas de estilo en cascada
 
 Pregunta: ¿Qué significa JS?
-Respuesta: JustScript
+Respuesta: JavaScript
 
 Pregunta: ¿Qué es un lenguaje de programación?
-Respuesta: Un lenguaje que los humanos entienden
+Respuesta: Un lenguaje que las computadoras entienden
 
 Pregunta: ¿Qué es un algoritmo?
-Respuesta: Un conjunto de instrucciones para hacer café
+Respuesta: Un conjunto de instrucciones para resolver un problema
 
 Pregunta: ¿Cual es un framework de JavaScript?
 Respuesta: React
@@ -22,7 +22,7 @@ Pregunta: ¿Qué es un IDE?
 Respuesta: Entorno de desarrollo interactivo
 
 Pregunta: Cual es un sistema operativo?
-Respuesta: Windows
+Respuesta: Todas las anteriores
 
 Pregunta: ¿Qué es un servidor?
 Respuesta: Un ordenador que recibe datos de otros ordenadores
@@ -30,6 +30,6 @@ Respuesta: Un ordenador que recibe datos de otros ordenadores
 Pregunta: ¿Cual es un lenguaje de programación usado para ciencia de datos?
 Respuesta: Python
 
-Puntos Obtenidos: 4
-Fecha: 25/3/2024
-Tiempo: 12 segundos
+Puntos Obtenidos: 8
+Fecha: 2/6/2024
+Tiempo: 30 segundos
