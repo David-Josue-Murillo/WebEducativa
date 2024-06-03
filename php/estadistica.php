@@ -52,10 +52,10 @@ if($registros !== null){
     }
 
     for ($i=0; $i < count($registros); $i++) { 
-        $answers = $registros[$i]['answers'];
+        $listAnswers = $registros[$i]['answers'];
         
-        for ($j=0; $j < count($answers); $j++) { 
-            if($answers[$j]['correct']){
+        for ($j=0; $j < count($listAnswers); $j++) { 
+            if($listAnswers[$j]['correct']){
                 $cantAciertas[$j]++;
             }else{
                 $cantFallas[$j]++;
@@ -77,22 +77,49 @@ if($registros !== null){
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/estadisticas.css">
 </head>
+
 <body>
     <header>
         <h1>Web Educativa</h1>
     </header>
     <main>
-        <h2>Evaluación Completada</h2>
-        <p>Puntaje: 8/10</p>
-        <p>Tiempo Invertido: 15 minutos</p>
-        <button onclick="location.href='review.html'">Revisar Práctica</button>
+        <section class="section-estadisticas">
+            <div class="estadisticas-title">
+                <h2>Estadísticas de las prácticas</h2>
+            </div>
+
+            <div class="estadisticas-content">
+                <div class="estadisticas-content-item" id="practCompletadas">
+                    <h3>Cantidad de prácticas completadas</h3>
+                    <p>11111111111</p>
+                </div>
+                <div class="estadisticas-content-item" id="tiempoMinimo">
+                    <h3>Tiempo mínimo en resolver</h3>
+                    <p>11111111111</p>
+                </div>
+                <div class="estadisticas-content-item" id="tiempoMaximo">
+                    <h3>Tiempo máximo en resolver</h3>
+                    <p>11111111111</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-charts">
+            <div>
+                hola mundo
+            </div>
+        </section>
+        
         <button onclick="location.href='index.html'">Volver al Inicio</button>
     </main>
 </body>
+
 </html>

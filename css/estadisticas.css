@@ -1,0 +1,37 @@
+section-estadisticas{
+    border: 1px solid #6bcc7a;
+}
+
+.estadisticas-title{
+    background-color: #6bcc7a;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+
+}
+
+.estadisticas-title h2{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.estadisticas-content{
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+.estadisticas-content-item{
+    background-color: #6bcc7a;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.section-charts{
+    display: flex;
+    justify-content: space-around;
+    background-color: #6baacc;
+}

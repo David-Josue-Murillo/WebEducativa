@@ -28,6 +28,11 @@ button {
     font-size: 16px;
 }
 
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
 button:hover {
     background-color: #0056b3;
 }
@@ -98,6 +103,12 @@ nav button {
 .navFallas nav{
     background-color: #2878cf;
     color: white;
+}
+
+.section-title h2{
+    margin-bottom: 20px;
+    font-size: 2rem;
+    background-color: chartreuse;
 }
 
 @media (max-width: 600px) {
