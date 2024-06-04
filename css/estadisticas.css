@@ -1,4 +1,6 @@
-section-estadisticas{
+.section-estadisticas{
+    display: flex;
+    flex-direction: column;
     border: 1px solid #6bcc7a;
 }
 
@@ -7,7 +9,6 @@ section-estadisticas{
     color: white;
     padding: 0.5em;
     text-align: center;
-
 }
 
 .estadisticas-title h2{

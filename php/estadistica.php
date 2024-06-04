@@ -90,6 +90,7 @@ if($registros !== null){
     <header>
         <h1>Web Educativa</h1>
     </header>
+    
     <main>
         <section class="section-estadisticas">
             <div class="estadisticas-title">
@@ -99,15 +100,15 @@ if($registros !== null){
             <div class="estadisticas-content">
                 <div class="estadisticas-content-item" id="practCompletadas">
                     <h3>Cantidad de prácticas completadas</h3>
-                    <p>11111111111</p>
+                    <?php echo "<p>" . count($registros) . "</p>"; ?>
                 </div>
                 <div class="estadisticas-content-item" id="tiempoMinimo">
                     <h3>Tiempo mínimo en resolver</h3>
-                    <p>11111111111</p>
+                    <?php echo "<p>" . $tiempoMinimo . " Segundos</p>"; ?>
                 </div>
                 <div class="estadisticas-content-item" id="tiempoMaximo">
                     <h3>Tiempo máximo en resolver</h3>
-                    <p>11111111111</p>
+                    <?php echo "<p>" . $tiempoMaximo . " Segundos</p>"; ?>
                 </div>
             </div>
         </section>
@@ -120,6 +121,8 @@ if($registros !== null){
         
         <button onclick="location.href='index.html'">Volver al Inicio</button>
     </main>
+
+    <script type="module" src="../js/estadisticas.js"></script>
 </body>
 
 </html>
