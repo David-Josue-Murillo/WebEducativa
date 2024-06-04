@@ -33,7 +33,6 @@
 
 .section-charts {
     display: flex;
-    justify-content: space-around;
     background-color: #6baacc;
 }
 
