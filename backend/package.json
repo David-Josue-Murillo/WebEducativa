@@ -14,5 +14,8 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "json-server": "^1.0.0-beta.0"
+  },
+  "dependencies": {
+    "echarts": "^5.5.0"
   }
 }

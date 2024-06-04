@@ -114,15 +114,12 @@ if($registros !== null){
         </section>
 
         <section class="section-charts">
-            <div>
-                hola mundo
+            <div id="chartMain" >
             </div>
         </section>
         
         <button onclick="location.href='index.html'">Volver al Inicio</button>
     </main>
-
-    <script type="module" src="../js/estadisticas.js"></script>
 </body>
 
 </html>
