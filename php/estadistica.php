@@ -108,18 +108,64 @@ if ($registros !== null) {
                     <?php echo "<p>" . $tiempoMaximo . " Segundos</p>"; ?>
                 </div>
             </div>
-        </section>
 
-        <section class="section-charts">
-            <div id="chartMain">
+            <div class="estadisticas-content">
+                <div class="estadisticas-content-item" id="practCompletadas">
+                    <h3>Cantidad de estudiantes por puntajes correctos</h3>
+                    <section class="estadisticas-content">
+                        <div>
+                            <h3>Puntos Obtenido</h3>
+                            <?php 
+                                for ($i = 10; $i >= 0; $i--) {
+                                    echo "<p>{$i}</p>";
+                                }
+                            ?>
+                        </div>
+                        <div>
+                            <h3>Cant. de estudiantes</h3>
+                            <?php 
+                                for ($i = 10; $i >= 0; $i--) {
+                                    echo "<p>{$puntajesEstudiantes[$i]}</p>";
+                                }
+                            ?>
+                        </div>
+                    </section>
+                </div>
                 
-            </div>
+                <div class="estadisticas-content-item" id="tiempoMinimo">
+                    <h3>Estadísticas de aciertos y fallas</h3>
+                    <section class="estadisticas-content">
+                        <div class="item-estadisticas">
+                            <h3>Preguntas</h3>
+                            <?php 
+                                for ($i = 1; $i <= 10; $i++) {
+                                    echo "<p>{$i}</p>";
+                                }
+                            ?>
+                        </div>
+                        <div class="item-estadisticas">
+                            <h3>Cant. de aciertos</h3>
+                            <?php 
+                                for ($i = 0; $i < 10; $i++) {
+                                    echo "<p>{$cantAciertas[$i]}</p>";
+                                }
+                            ?>
+                        </div>
+                        <div class="item-estadisticas">
+                            <h3>Cant. de fallas</h3>
+                            <?php 
+                                for ($i = 0; $i < 10; $i++) {
+                                    echo "<p>{$cantFallas[$i]}</p>";
+                                }
+                            ?>
+                        </div>
+                    </section>
+                </div>
         </section>
 
-        <button onclick="location.href='index.html'">Volver al Inicio</button>
+        <button onclick="location.href='../html/index.php'">Volver al Inicio</button>
     </main>
 
-    <script type="module" src="../js/charts.js"></script>
 </body>
 
 </html>

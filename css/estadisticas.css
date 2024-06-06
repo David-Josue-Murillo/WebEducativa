@@ -33,8 +33,14 @@
 
 .section-charts {
     display: flex;
+    justify-content: center;
     background-color: #6baacc;
 }
+
+.item-estadisticas{
+    margin: 0 1em;
+}
+
 
 @media (max-width: 992px) {
     .estadisticas-content-item {

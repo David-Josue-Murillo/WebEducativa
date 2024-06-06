@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
             mostrarPreguntas(indicePreguntasActuales);
         } else {
             const resultData = mostrarResultados();
+            //nuevoRegistro(resultData);
             enviarDatos(resultData, elementosDOM.guardarDatos);
         }
     }
@@ -150,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function enviarDatos(datos, elemento) {
-        const btnEnviar = document.createElement('button');
+        /*const btnEnviar = document.createElement('button');
         btnEnviar.textContent = 'Guardar Datos';
         btnEnviar.style.display = 'block';
         btnEnviar.style.margin = '10px auto';
@@ -162,6 +163,11 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             
             nuevoRegistro(datos);
-        });
+        });*/
+        
+        elementosDOM.botonSiguientePregunta.textContent = 'Ver respuestas correctas';
+        elementosDOM.botonSiguientePregunta.style.display = 'block';
+        elementosDOM.botonSiguientePregunta.style.margin = '10px auto';
+        elementosDOM.botonSiguientePregunta.style.cursor = 'pointer';
     }
 });
